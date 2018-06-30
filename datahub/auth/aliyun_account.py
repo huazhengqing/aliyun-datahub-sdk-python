@@ -126,5 +126,5 @@ class AliyunAccount(Account):
 
         sign = hmac_sha1(self._access_key, canonical_str)
 
-        auth_str = 'DATAHUB %s:%s' % (self._access_id, sign)
+        auth_str = 'DATAHUB %s:%s' % (self._access_id, sign.decode())
         request.headers[Headers.AUTHORIZATION] = auth_str
